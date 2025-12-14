@@ -1,0 +1,15 @@
+.hero {
+    height: 50vh;
+    background-color: #ff8c42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero2 {
+    height: 50vh;
+    background-color: #f5f5dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

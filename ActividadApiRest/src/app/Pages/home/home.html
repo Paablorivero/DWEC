@@ -1,0 +1,16 @@
+<section class="bg-blue mt-5">
+    <br>
+    <div class="hero">
+        <div class="text-center">
+            <h1>Usuarios Registrados</h1>
+        </div>
+    </div>
+</section>
+
+<div class="row">
+    @for(usuario of usuarioArray; track usuario.id){
+        <article class="col-12 col-md-6 col-sm-3">
+            <app-card-usuario [miUsuario]="usuario"></app-card-usuario>
+        </article>
+    }
+</div>

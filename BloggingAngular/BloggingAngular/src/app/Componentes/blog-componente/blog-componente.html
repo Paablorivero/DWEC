@@ -1,0 +1,41 @@
+<section class="container-fluid  blog">
+    <div class="row">
+        <div class="col-sm-4 menuCreacion"><!--CREACION DE LA NOTICIA-->
+            <!--Añadimos un formulario para recoger los datos de la noticia-->
+            <h1 class="mt-3">Añadir una noticia al blog</h1>
+            <hr>
+            <strong>Titulo</strong>
+            <input type="text" placeholder="Titulo de la noticia" [(ngModel)]="nuevaNoticia.nombre" class="form-control mb-3">
+            <strong>Imagen</strong>
+            <input type="url" placeholder="Link de la imagen" [(ngModel)]="nuevaNoticia.imagen" class="form-control mb-3"> 
+            <strong>Contenido</strong>
+            <textarea placeholder="Escribe aqui la noticia completa" [(ngModel)]="nuevaNoticia.noticia" class="form-control mb-3" rows="10"></textarea>
+            <strong>Fecha de la noticia </strong>
+            <input type="date" [(ngModel)]="nuevaNoticia.fecha" class="form-control mb-3">
+
+            <!--Boton para publicar añadir las noticias al array de TS-->
+            <button (click)="addNoticia()" class="btn btn-success">Publicar Noticia</button>
+        </div>
+
+        <div class="col-sm-8"><!--MOSTRAMOS NOTICIAS-->
+            <h1 class="mt-3">Noticias Publicadas</h1>
+            <hr>
+            @for(noticias of noticiasBlog; track noticias.fecha; let i = $index){
+                <div class="card mb-3">
+                    <!--Creamos una tarjeta para cada noticia-->
+                    <div class="card-body tarjetaNoticia">
+                        <h3>{{noticias.nombre}}</h3>
+                        <img [src]="noticias.imagen" alt="Imagen" class="img-fluid mb-3">
+                        <p>{{noticias.noticia}}</p>
+                        <p class="fst-italic">Fecha de publicacion: {{noticias.fecha}}</p>
+                    </div>
+                </div>
+            }
+            @empty {<!--Mostramos un mensaje si el array no tiene elementos-->
+                <h2>Todavia no hay noticias publicadas</h2>
+            }
+
+        </div>
+    </div>
+
+</section>

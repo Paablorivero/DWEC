@@ -1,0 +1,7 @@
+.hero {
+    height: 50vh;
+    background-color: #ff8c42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

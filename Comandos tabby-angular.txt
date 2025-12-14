@@ -1,0 +1,39 @@
+COMPROBAR VERSIONES
+
+	Versión de node: node -v
+
+	versión npm: npm -v
+
+	versión angular: ng versión
+
+CREAR PROYECTO
+
+	Proyecto angular: ng new NombreProyecto
+
+
+DESCARGAR ANGULAR
+
+	Descargar angular: npm install -g @angular/cli
+
+DESCARGAR Bootstrap
+	
+	Descarga: npm install bootstrap
+ 
+
+CREAR 
+
+	crear componente: ng g c carpetaComponentes/NombreComponente --skip-tests
+
+	crear interfaz: ng g i CarpetaInterface/NombreInterface
+	
+	crear servicio: ng g s CarpetaServices/NombreServicio
+
+	crear pagina: ng g c CarpetaPages/NombrePagina --skip-tests
+
+EJECUTAR PROYECTO
+
+	 ng serve -o
+
+
+
+

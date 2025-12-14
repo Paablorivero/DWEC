@@ -1,0 +1,21 @@
+<!--Tarjeta de producto en el carrito-->
+<div class="mb-1 row">
+
+        <!--Columna de nombre y precio-->
+        <div class="col-sm-5">
+            <b>{{miCompra.title}}</b>
+            <p class="fst-italic text-body-secondary">{{miCompra.price}}€</p>
+        </div>
+
+        <!--Columna de cantidad-->
+        <div class="col-sm-3 text-center">
+            <p>x{{miCompra.cantidad}}</p>
+        </div>
+
+        <!--Columna del total del producto-->
+        <div class="col-sm-4">
+            <p>{{(miCompra.cantidad * miCompra.price).toFixed(2)}}€</p>
+        </div>
+        <hr>
+</div>
+

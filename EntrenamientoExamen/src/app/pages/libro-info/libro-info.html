@@ -1,0 +1,37 @@
+<section class="bg-white mt-5">
+    <div class="row hero">
+        <div class="col-sm-2 imagen">
+            <img class="img-fluid imagen rounded-start" src="{{miLibro.imagen}}" alt="{{miLibro.titulo}}">
+        </div>
+        <div class="row col-sm-5">
+            <div class="col-sm-5">
+                <div>
+                    <b>Titulo</b>
+                    <p>{{miLibro.titulo}}</p>
+                </div>
+                <div>
+                    <b>Director</b>
+                    <p>{{miLibro.autor}}</p>
+                </div>
+                <div>
+                    <b>Fecha de estreno</b>
+                    <p>{{miLibro.publicacion}}</p>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div>
+                    <b>Calificación</b>
+                    <p>{{miLibro.calificacion}}/10</p>
+                </div>
+                <div>
+                    <b>Sinopsis</b>
+                    <p>{{miLibro.resumen}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex gap-3 hero2">
+                        <a class="btn btn-secondary" [routerLink]="['/home']">Volver al Inicio</a>
+                        <a class="btn btn-warning" [routerLink]="['/libros']">Volver a la biblioteca</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<!--Creamos una tarjeta para cada producto-->
+<div class=" mb-1 row">
+    <hr>
+    <!--Columna Nombre y referencia-->
+    <div class="col-sm-7">
+        <h4 class="mb-2">{{miProducto.title}}</h4>
+        <p class="fst-italic text-body-secondary">{{miProducto.sku}}</p>
+    </div>
+
+    <!--Columna Precio-->
+    <div class="col-sm-2">
+        <p class="mt-2">{{miProducto.price}}€</p>
+    </div>
+
+    <!--Columna Cantidad-->
+    <div class="col-sm-3">
+        <div class="input-group">
+        <button class="btn btn-success col-2" (click)="sumarCantidad()">+</button>
+        <span class="text-center col-2 border border-dark">{{this.cantidad}}</span>
+        <button class="btn btn-danger col-2 " (click)="restarCantidad()">-</button>
+        </div>
+    </div>
+</div>
+

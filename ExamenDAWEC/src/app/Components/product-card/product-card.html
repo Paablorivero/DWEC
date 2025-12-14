@@ -1,0 +1,22 @@
+
+        <section>
+            <div class="card mb-3 p-3 bg-secondary bg-opacity-25">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="myProduct.image" [alt]="myProduct.name" class="img-fluid imagen rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{myProduct.name}}</h5>
+                            <p class="card-text">Precio: {{myProduct.price}}€</p>
+                            <p class="card-text">Categoria: {{myProduct.category}}</p>
+                            <p class="card-text"><small class="text-body-secondary">{{myProduct.description}}</small></p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-danger" (click)="deleteProduct(myProduct)">Eliminar</button>
+                        <button class="btn btn-warning" (click)="editProduct(myProduct)">Ver / Editar</button>
+                    </div>
+                </div>
+            </div>
+        </section>

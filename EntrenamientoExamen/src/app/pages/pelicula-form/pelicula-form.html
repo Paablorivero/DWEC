@@ -1,0 +1,63 @@
+<section class="container mt-5">
+    <hr>
+    @if(isNew){
+    <h1>Insertar nueva pelicula</h1>
+    <hr>
+    }
+    @else {
+        <h1>Editar una pelicula</h1>
+    <hr>
+    }
+    
+
+    <form [formGroup]="peliculaForm" (ngSubmit)="getDataForm()" class="card p-3 shadow bg-secondary">
+        <div class="my-2">
+            <label for="titulo" class="form-label mt-lg-3">Titulo</label>
+            <input type="text" class="form-control" name="titulo" id="titulo" 
+            placeholder="Introduce el titulo" formControlName="titulo">
+        </div>
+
+        <div class="my-2">
+            <label for="director" class="form-label mt-lg-3">Director</label>
+            <input type="text" class="form-control" name="director" id="director" 
+            placeholder="Introduce el director" formControlName="director">
+        </div>
+
+        <div class="my-2">
+            <label for="estreno" class="form-label mt-lg-3">Estreno</label>
+            <input type="number" class="form-control" name="estreno" id="estreno" 
+            placeholder="Introduce el estreno" formControlName="estreno">
+        </div>
+
+        <div class="my-2">
+            <label for="genero" class="form-label mt-lg-3">Genero</label>
+            <input type="text" class="form-control" name="genero" id="genero" 
+            placeholder="Introduce el genero" formControlName="genero">
+        </div>
+
+        <div class="my-2">
+            <label for="calificacion" class="form-label mt-lg-3">Calificacion</label>
+            <input type="number" class="form-control" name="calificacion" id="calificacion" 
+            placeholder="Introduce la calificacion(0 - 10)" formControlName="calificacion">
+        </div>
+
+        <div class="my-2">
+            <label for="sinopsis" class="form-label mt-lg-3">Sinopsis</label>
+            <input type="text" class="form-control" name="sinopsis" id="sinopsis" 
+            placeholder="Introduce la sinopsis" formControlName="sinopsis">
+        </div>
+
+        <div class="my-2">
+            <label for="imagen" class="form-label mt-lg-3">Imagen</label>
+            <input type="text" class="form-control" name="imagen" id="imagen" 
+            placeholder="Introduce la url de la imagen" formControlName="imagen">
+        </div>
+
+        <div class="d-flex ms-auto gap-2 mb-5">
+            <input type="submit" value="Guardar" class="btn btn-success mt-5" [disabled]="!peliculaForm.valid">
+            <button class="btn btn-warning mt-5" [routerLink]="['/peliculas']">Volver</button>
+        </div>
+    </form>
+    <hr>
+</section>
+

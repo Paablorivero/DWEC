@@ -1,0 +1,43 @@
+<section class="container mt-5">
+    <hr>
+    <h1>Insertar un nuevo producto</h1>
+    <hr>
+
+    <form [formGroup]="productForm" (ngSubmit)="getDataForm()" class="card p-3 shadow bg-secondary">
+        <div class="my-2">
+            <label for="name" class="form-label mt-lg-3">Nombre</label>
+            <input type="text" class="form-control" name="name" id="name" 
+            placeholder="Introduce el nombre del producto" formControlName="name">
+        </div>
+        <div class="my-2">
+            <label for="description" class="form-label mt-lg-3">Descripcion del producto</label>
+            <input type="text" class="form-control" name="description" id="description" 
+            placeholder="Introduce una breve descripcion" formControlName="description">
+        </div>
+        <div class="my-2">
+            <label for="price" class="form-label mt-lg-3">Precio</label>
+            <input type="number" class="form-control" name="price" id="price" 
+            placeholder="Introduce el precio del producto" formControlName="price">
+        </div>
+        <div class="my-2">
+            <label for="category" class="form-label mt-lg-3">Categoria (Selecciona una:)</label>
+            <select type="text" class="form-control" name="category" id="category" 
+            formControlName="category">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="niño">Niño</option>
+            </select>
+            
+        </div>
+        <div class="my-2">
+            <label for="image" class="form-label mt-lg-3">Imagen</label>
+            <input type="text" class="form-control" name="image" id="image" 
+            placeholder="Introduce la url de la imagen del producto" formControlName="image">
+        </div>
+
+        <div class="d-flex ms-auto gap-2 mb-5">
+            <input type="submit" value="Añadir Producto" class="btn btn-success mt-5" [disabled]="!productForm.valid">
+            <button class="btn btn-warning mt-5" [routerLink]="['/product']">Volver</button>
+        </div>
+    </form>
+</section>

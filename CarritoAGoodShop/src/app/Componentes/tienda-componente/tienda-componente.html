@@ -1,0 +1,74 @@
+<div class="container mt-4">
+    <div class="row">
+
+        <!--LISTA DE PRODUCTOS-->
+        <div class="col-sm-7"><!--div general para la lista de productos-->
+            <h2>Productos</h2><!--Titulo-->
+
+            <!--div para columnas con las referencias-->
+            <div class="row mt-4">
+                <div class="col-sm-7">
+                    <h5>Nombre / Ref.</h5>
+                </div>
+
+                <div class="col-sm-2">
+                    <h5>Precio</h5>
+                </div>
+
+                <div class="col-sm-3">
+                    <h5>Cantidad</h5>
+                </div>
+            </div>
+
+        <!--bucle for para acceder al array lista de productos y enviar el producto al componente hijo-->
+            @for (producto of listaProductos; track producto.sku) {
+                <app-producto-componente [miProducto]="producto"></app-producto-componente>
+            }
+            @empty {<!--Mostramos un mensaje si el array no tiene elementos-->
+                <h2>Todavia no hay Productos</h2>
+            }
+        </div>
+
+        <!--Espacio divisor entre la lista de productos y el resumen de la compra-->
+        <div class="col-sm-1"></div>
+
+        <!--RESUMEN CARRITO-->
+        <div class="col-sm-4 mt-5"><!--div general para el bloque del carrito-->
+            <h2>Resumen de compra</h2>   
+            
+            <!--Columnas de referencias-->
+            <div class="row mt-4 ">
+                <div class="col-sm-5">
+                    <h5>Producto</h5>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <h5>Cantidad</h5>
+                </div>
+                <div class="col-sm-4">
+                    <h5>Subtotal</h5>
+                </div>
+                <hr>
+            </div>
+            
+            <!--Bucle for para acceder al array carrito y enviar datos al hijo-->
+            @for (productoSel of carrito; track productoSel.sku) {
+                <app-carrito-componente [miCompra] = "productoSel"></app-carrito-componente>
+            }@empty {
+                <h5 class="text-center">El carrito esta vacio</h5>
+            }
+
+            <!--Le damos una condicion para mostrar o no el bloque del precio total-->
+            @if (carrito.length >= 1){
+            <!--Bloque del precio total-->
+            <div class=" row mt-2 ">
+                <div class="col-sm-6 ">
+                    <h4>Precio final: </h4>
+                </div>
+                <div class="col-sm-6 ">
+                    <h5>{{this.ServicioCarrito.getTotal().toFixed(2)}}€</h5>
+                </div>
+            </div>   
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.hero {
+    height: 90vh;
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero2 { 
+    background-color: #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen{
+    height: 400px;
+    width: 300px;  
+    object-fit: cover;
+    border-radius: 10px; 
+}

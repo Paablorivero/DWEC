@@ -1,0 +1,8 @@
+.footer{
+    background-color: rgb(177, 177, 177);
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+}

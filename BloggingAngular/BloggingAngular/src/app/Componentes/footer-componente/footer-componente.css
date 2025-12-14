@@ -1,0 +1,9 @@
+.footer{
+    background-color: rgb(105, 105, 105);
+    box-shadow: 10px 10px 5px rgb(92, 92, 92) inset;
+    text-align: center;
+}
+.titulo{
+    color: rgb(171, 171, 171);
+    text-align: center;
+}

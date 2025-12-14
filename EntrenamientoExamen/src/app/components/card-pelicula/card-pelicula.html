@@ -1,0 +1,46 @@
+@switch (ServicioRol.rol) {
+    @case ('admin') {
+        <section>
+            <div class="card mb-3 p-3 bg-secondary bg-opacity-25">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="miPelicula.imagen" [alt]="miPelicula.titulo" class="img-fluid imagen rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{miPelicula.titulo}}</h5>
+                            <p class="card-text">Calificacion: {{miPelicula.calificacion}}/10</p>
+                            <p class="card-text"><small class="text-body-secondary">{{miPelicula.genero}}</small></p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-primary" (click)="verMas(miPelicula)">Ver mas</button>
+                        <button class="btn btn-danger" (click)="eliminarPelicula(miPelicula)">Eliminar</button>
+                        <button class="btn btn-warning" (click)="actualizarPelicula(miPelicula)">Editar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    @case ('usuario'){
+        <section>
+            <div class="card mb-3 p-3 bg-secondary bg-opacity-25">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="miPelicula.imagen" [alt]="miPelicula.titulo" class="img-fluid imagen rounded-start">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{miPelicula.titulo}}</h5>
+                            <p class="card-text">{{miPelicula.calificacion}}</p>
+                            <p class="card-text"><small class="text-body-secondary">{{miPelicula.genero}}</small></p>
+                            </div>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <button class="btn btn-primary" (click)="verMas(miPelicula)">Ver mas</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
