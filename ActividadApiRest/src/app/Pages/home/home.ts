@@ -18,12 +18,12 @@ export class Home {
     this.usuarioArray = [];
   }
 
-  ngOnInit(): void{
-
-    this.UsersService.getAllUsers().subscribe((data: any) => {
-      this.usuarioArray = data.results;
-      console.log(this.usuarioArray)
+  async ngOnInit(): Promise<void>{
+    try{
+      this.usuarioArray = await this.UsersService.getAllUsers();
     }
-    );
+    catch (err){
+      alert("Error al conectar con la api");
+    }
   }
 }
