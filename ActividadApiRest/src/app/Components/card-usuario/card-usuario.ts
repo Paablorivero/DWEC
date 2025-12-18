@@ -14,4 +14,8 @@ export class CardUsuario {
   userService = inject(ServicioUsuario);
   router = inject(Router);
   @Input() miUsuario!: Iusuario;
+
+  verMas(usuario : Iusuario){
+    this.router.navigate(['/user', usuario._id]);
+  }
 }

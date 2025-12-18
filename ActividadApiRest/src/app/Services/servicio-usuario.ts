@@ -23,4 +23,8 @@ export class ServicioUsuario {
   insertUser(usuario: Iusuario): Promise<Iusuario> {
     return lastValueFrom(this.httpClient.post<Iusuario>(this.baseUrl, usuario));
   }
+
+  getUserById(id : string): Promise<Iusuario>{
+    return lastValueFrom(this.httpClient.get<Iusuario>(this.baseUrl + '/' + id));
+  }
 }
