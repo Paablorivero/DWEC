@@ -3,6 +3,7 @@ import { ServicioUsuario } from '../../Services/servicio-usuario';
 import { Router } from '@angular/router';
 import { Iusuario } from '../../Interfaces/iusuario';
 
+
 @Component({
   selector: 'app-card-usuario',
   imports: [],
