@@ -1,4 +1,10 @@
-@media(max-width: 1000px){
+@media (max-width: 1450px){
+    .tarjeta{
+        width: 50%;
+        flex-direction: column;
+    }
+}
+@media(max-width: 1070px){
     .tarjeta{
         width: 100%;
         flex-direction: column;

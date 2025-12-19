@@ -1,1 +1,7 @@
-
+.card{
+    width: 80rem;
+    max-width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
