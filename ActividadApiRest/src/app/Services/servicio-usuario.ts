@@ -15,9 +15,9 @@ export class ServicioUsuario {
 
   constructor(){}
 
-  async getAllUsers(): Promise<Iusuario[]> {
-    const resp = await lastValueFrom(this.httpClient.get<IApi>(this.baseUrl));
-    return resp.results;
+  async getAllUsersPage(page: number = 1): Promise<IApi> {  
+    const resp = await lastValueFrom(this.httpClient.get<IApi>(`${this.baseUrl}?page= ${page}`)); 
+    return resp;
   }
 
   insertUser(usuario: Iusuario): Promise<Iusuario> {
@@ -26,5 +26,13 @@ export class ServicioUsuario {
 
   getUserById(id : string): Promise<Iusuario>{
     return lastValueFrom(this.httpClient.get<Iusuario>(this.baseUrl + '/' + id));
+  }
+
+  updateUser(usuario: Iusuario): Promise<Iusuario>{
+    return lastValueFrom(this.httpClient.put<Iusuario>(`${this.baseUrl}/${usuario._id}`, usuario));
+  }
+
+  deleteById(_id: string): Promise<Iusuario>{
+    return lastValueFrom(this.httpClient.delete<Iusuario>(`${this.baseUrl}/${_id}`));
   }
 }

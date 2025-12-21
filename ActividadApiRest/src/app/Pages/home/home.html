@@ -2,15 +2,43 @@
     <br>
     <div class="hero">
         <div class="text-center">
-            <h3>Usuarios Registrados</h3>
+            <h4>Usuarios Registrados</h4>
         </div>
     </div>
 </section>
-
+<hr>
 <div class="row ms-5 me-5">
     @for(usuario of usuarioArray; track usuario.id){
         <article class=" tarjeta col-8 col-md-3 col-sm-3">
             <app-card-usuario [miUsuario]="usuario"></app-card-usuario>
         </article>
     }
+    <!-- Controles de paginación -->
+    <div class="row m-5">
+        <div class="col-12">
+            <nav>
+                <ul class="pagination pagination-lg justify-content-center flex-wrap">
+
+                    <!-- Anterior -->
+                    <li class="page-item" [class.disabled]="paginaActual === 1">
+                        <a class="page-link" (click)="paginaAnterior()" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === 1">
+                            <i class="bi bi-chevron-left"></i>
+                            <span class="d-none d-sm-inline ms-1">Anterior</span>
+                        </a>
+                    </li>
+
+                    <!-- Siguiente -->
+                    <li class="page-item" [class.disabled]="paginaActual === totalPaginas">
+                        <a class="page-link" (click)="paginaSiguiente()" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === totalPaginas">
+                            <span class="d-none d-sm-inline me-1">Siguiente</span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </div>
+

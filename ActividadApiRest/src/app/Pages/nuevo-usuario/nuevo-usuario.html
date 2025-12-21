@@ -1,53 +1,62 @@
-<section class="bg-blue mt-5">
+<section class="mt-5">
     <br>
     <div class="hero">
-        <div class="text-center">
-            <h1>Crear Usuario</h1>
+        <div class="text-start ms-5">
+            @if(isNew){
+            <h4>Nuevo Usuario</h4>
+            }@else {
+            <h4>Editar Usuario</h4>
+            }
         </div>
     </div>
 </section>
 
-<hr>
-
-<form [formGroup]="userForm" class="card p-3 shadow bg-secondary" (ngSubmit)="getDataForm()">
+<form [formGroup]="userForm" class="card p-3 border-0 bg-white ms-5" (ngSubmit)="getDataForm()">
     <div class="my-2">
         <label for="first_name" class="form-label">Nombre</label>
-        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Introduzca el Nombre"
+        <input type="text" class="form-control border border-2 border-dark rounded-1" name="first_name" id="first_name" placeholder="Introduzca el Nombre"
         formControlName="first_name">
     </div>
 
     <div class="my-2">
         <label for="last_name" class="form_label mt-lg-3">Apellido</label>
-        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Introduce el Apellido"
+        <input type="text" class="form-control border border-2 border-dark rounded-1" name="last_name" id="last_name" placeholder="Introduce el Apellido"
         formControlName="last_name">
     </div>
 
     <div class="my-2">
         <label for="username" class="form-label mt-lg-3">Usuario</label>
-        <input type="text" class="form-control" name="username" id="username" placeholder="Introduce el nombre de usuario"
+        <input type="text" class="form-control border border-2 border-dark rounded-1" name="username" id="username" placeholder="Introduce el nombre de usuario"
         formControlName="username">
     </div>
 
     <div class="my-2">
         <label for="email" class="form-label mt-lg-3">Email</label>
-        <input type="text" class="form-control" name="email" id="email" placeholder="Introduce el correo electronico"
+        <input type="text" class="form-control border border-2 border-dark rounded-1" name="email" id="email" placeholder="Introduce el correo electronico"
         formControlName="email">
     </div>
 
     <div class="my-2">
         <label for="image" class="form-label mt-lg-3">Imagen de Perfil</label>
-        <input type="text" class="form-control" name="image" id="image" placeholder="Introduce el link de tu imagen de perfil"
+        <input type="text" class="form-control border border-2 border-dark rounded-1" name="image" id="image" placeholder="Introduce el link de tu imagen de perfil"
         formControlName="image">
     </div>
 
     <div class="my-2">
         <label for="password" class="form-label mt-lg-3">Introduce la contraseña</label>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Minimo 12 caracteres"
+        <input type="password" class="form-control border border-2 border-dark rounded-1" name="password" id="password" placeholder="Minimo 12 caracteres"
         formControlName="password">
     </div>
 
-    <div class="d-flex ms-auto gap-2">
-        <input type="submit" value="Guardar" class="btn btn-success mt-5 btn-lg" [disabled]="!userForm.valid">
-        <button class="btn btn-warning mt-5" [routerLink]="['/home']">Volver</button>
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-outline-success border-dark text-dark mt-5 btn-lg" [disabled]="!userForm.valid">
+            <i class="bi bi-floppy"></i>
+            Guardar
+        </button>
+        
+        <button class="btn btn-outline-warning border-dark text-dark mt-5" [routerLink]="['/home']">
+            <i class="bi bi-house"></i><br>
+            Volver al inicio </button>
+            
     </div>
 </form>

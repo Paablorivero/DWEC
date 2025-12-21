@@ -2,6 +2,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import { ServicioUsuario } from '../../Services/servicio-usuario';
 import { Iusuario } from '../../Interfaces/iusuario';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-info-usuario',
@@ -50,4 +51,30 @@ export class InfoUsuario {
     })
   }
   
+  eliminar(usuario: Iusuario){
+      Swal.fire({
+        title: '¿Eliminar usuario ' + usuario.first_name + '?',
+        text: 'Esta acción no se puede deshacer',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+      if (result.isConfirmed) {
+        this.userService.deleteById(usuario._id);
+        Swal.fire(
+          'Eliminado',
+          'El usuario ha sido eliminado correctamente',
+          'success'
+        );
+      }
+      this.router.navigate(['home'])
+      });
+    }
+
+    editar(usuario: Iusuario){
+    this.router.navigate(['/updateuser', usuario._id]);
+  }
 }

@@ -11,8 +11,8 @@
 
         <div class="flex-fill d-flex justify-content-center">
             <button class="btn btn-outline-primary btn-lg rounded-pill border border-0 text-dark" (click)="verMas(miUsuario)" ><i class="bi bi-zoom-in"> </i><br>Ver más</button>
-            <button class="btn btn-outline-danger btn-lg rounded-pill border border-0 text-dark"><i class="bi bi-trash"></i> <br>Eliminar</button>
-            <button class="btn btn-outline-warning btn-lg rounded-pill border border-0 text-dark"><i class="bi bi-pencil"><br></i>Editar  </button>
+            <button class="btn btn-outline-danger btn-lg rounded-pill border border-0 text-dark" (click)="eliminar(miUsuario)"><i class="bi bi-trash"></i> <br>Eliminar</button>
+            <button class="btn btn-outline-warning btn-lg rounded-pill border border-0 text-dark" (click)="editar(miUsuario)"><i class="bi bi-pencil"><br></i>Editar</button>
         </div>
     </div>
 </section>
