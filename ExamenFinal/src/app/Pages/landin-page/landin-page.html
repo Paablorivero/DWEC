@@ -1,0 +1,35 @@
+<body>
+
+    <header class="header">
+        <h1>DC Universe</h1>
+        <p>Aqui puedes ver tus heroes favoritos</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            @if(isToken){
+            <li><a [routerLink]="['/dashboard/heroes']">Ver heroes</a></li>
+            }@else{
+            <li><a [routerLink]="['/login']">Log in</a></li>
+            }
+        </ul>
+    </nav>
+<br>
+    <section class="bg-white">
+    <div class="hero">
+        <div class="text-center">
+            <h1>Este es el examen para DWEC</h1>
+            <p>La app consiste en una pagina que muestre una serie de productos recogidos desde una api</p>
+            <p>Estos mismos se podran ver, editar, eliminar y añadir desde la 
+                <a class="link-secondary link-underline-opacity-0 link-underline-opacity-50-hover" [routerLink]="['/product']">
+                    <b>pagina products .</b></a></p>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <p>© 2026 DC Universe - PabloRivero</p>
+    </footer>
+
+</body>
+

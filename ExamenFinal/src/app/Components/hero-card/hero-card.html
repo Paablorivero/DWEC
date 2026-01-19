@@ -1,0 +1,18 @@
+<section>
+    <div class="card mb-3 p-2 bg-secondary bg-opacity-25">
+
+        <div class="d-flex justify-content-center mb-2 mt-3">
+            <img [src]="miHeroe.image1" [alt]="miHeroe.fullname" class="img-fluid rounded-circle border border-4 border-dark w-75"/>
+        </div>
+
+        <div class="col-md-12 d-flex justify-content-center mb-4">
+            <h5 class="card-title"> <b>{{miHeroe.heroname}}</b></h5>
+        </div>
+
+        <div class="flex-fill d-flex justify-content-center">
+            <button class="btn btn-outline-primary btn-lg rounded-pill border border-0 text-dark" (click)="verMas(miHeroe)" ><i class="bi bi-zoom-in"> </i><br>Ver más</button>
+            <button class="btn btn-outline-danger btn-lg rounded-pill border border-0 text-dark" (click)="eliminar(miHeroe)"><i class="bi bi-trash"></i> <br>Eliminar</button>
+            <button class="btn btn-outline-warning btn-lg rounded-pill border border-0 text-dark" (click)="editar(miHeroe)"><i class="bi bi-pencil"><br></i>Editar</button>
+        </div>
+    </div>
+</section>
