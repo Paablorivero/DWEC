@@ -14,4 +14,9 @@ export class HomePage {
     this.isToken= false;
   }
 
+  ngOnInit(): void{
+    if(localStorage.getItem('accesToken')){
+      this.isToken = true;
+    }
+  }
 }
